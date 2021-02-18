@@ -1,87 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Home - Blog</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Home - Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "git.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="..">Blog</a>
+<body class="wy-body-for-nav" role="document">
 
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
+  <div class="wy-grid-for-nav">
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#5-scenarios-where-git-commands-will-help-you-keep-your-commits-atomic" class="nav-link">5 scenarios where git commands will help you keep your commits Atomic.</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#1-youve-just-committed-your-work-and-realized-you-forgot-to-add-something" class="nav-link">1. You've just committed your work and realized you forgot to add something</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#2-youve-worked-on-two-things-at-the-same-time-but-you-want-to-commit-them-separately" class="nav-link">2. You've worked on two things at the same time but you want to commit them separately.</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#3-you-want-to-merge-together-two-commits-you-realized-are-part-of-the-same-atomic-commit" class="nav-link">3. You want to merge together two commits you realized are part of the same Atomic commit.</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#4-your-code-has-been-reviewed-and-you-need-to-make-some-changes-to-your-commit" class="nav-link">4. Your code has been reviewed and you need to make some changes to your commit.</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#5-master-has-changed-while-you-were-working-on-your-branch" class="nav-link">5. Master has changed while you were working on your branch.</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
-    </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Blog</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
 
-<h1 id="5-scenarios-where-git-commands-will-help-you-keep-your-commits-atomic">5 scenarios where git commands will help you keep your commits Atomic.</h1>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-youve-just-committed-your-work-and-realized-you-forgot-to-add-something">1. You've just committed your work and realized you forgot to add something</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-youve-worked-on-two-things-at-the-same-time-but-you-want-to-commit-them-separately">2. You've worked on two things at the same time but you want to commit them separately.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-you-want-to-merge-together-two-commits-you-realized-are-part-of-the-same-atomic-commit">3. You want to merge together two commits you realized are part of the same Atomic commit.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-your-code-has-been-reviewed-and-you-need-to-make-some-changes-to-your-commit">4. Your code has been reviewed and you need to make some changes to your commit.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-master-has-changed-while-you-were-working-on-your-branch">5. Master has changed while you were working on your branch.</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Blog</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="5-scenarios-where-git-commands-will-help-you-keep-your-commits-atomic">5 scenarios where git commands will help you keep your commits Atomic.</h1>
 <p>I recently graduated from a bootcamp and started my first Developer job. Just like many before me, the first week was a bit overwhelming with what seemed like an avalanche of information.
 This article is a reflection on my first week as a Junior Software Developer and a few new Git commands I learned in order to make Atomic commits easier to manage.</p>
 <p>If you haven't heard before about Atomic commits you can do more reading
@@ -95,31 +109,30 @@ This article is a reflection on my first week as a Junior Software Developer and
 <p>In order to keep a clean working tree and adhere to the Atomic principles here are 5 scenarios that can happen on everyday basis and how you can easily get passed them.</p>
 <h2 id="1-youve-just-committed-your-work-and-realized-you-forgot-to-add-something">1. You've just committed your work and realized you forgot to add something</h2>
 <p>Start with a <code>git log</code> to check it's indeed the last commit you want to change.</p>
-<pre><code>commit 2df06c898ba035a0c0878e4f78032b0bd676f3ad (HEAD -&gt; master)
+<div class="highlight"><pre><span></span><code>commit 2df06c898ba035a0c0878e4f78032b0bd676f3ad (HEAD -&gt; master)
 Date:   Sat Feb 13 14:50:27 2021 +0000
 
     Frontend: Created layout for homepage
 
     This is a base on which we will develop the homepage and add
     new content.
-
-</code></pre>
+</code></pre></div>
 <p>Make your changes, add them to the staging area with <code>git add.</code> and them commit using
 <code>git commit --amend</code>. This will allow you to override your last commit with your new additions.
 If you do a <code>git log</code> now you can see you still have only on commit.</p>
-<pre><code>commit 5f7037f6e7e243e178a58b119e56c0b3337cd408 (HEAD -&gt; master)
+<div class="highlight"><pre><span></span><code>commit 5f7037f6e7e243e178a58b119e56c0b3337cd408 (HEAD -&gt; master)
 Date:   Sat Feb 13 14:50:27 2021 +0000
 
     Frontend: Created layout for homepage
 
     This is a base on which we will develop the homepage and add
     new content.
-</code></pre>
+</code></pre></div>
 <h2 id="2-youve-worked-on-two-things-at-the-same-time-but-you-want-to-commit-them-separately">2. You've worked on two things at the same time but you want to commit them separately.</h2>
 <p>You could use <code>git add &lt;file&gt;</code> but there is a more powerful option.
 Your key here is <code>git add --patch</code> or simply <code>git add -p</code>.
 When you pass this option to add, instead of immediately adding all the changes in the file to the index, it goes through each change and asks you what you want to do, and looks like this:</p>
-<pre><code>diff --git a/styles.css b/styles.css
+<div class="highlight"><pre><span></span><code>diff --git a/styles.css b/styles.css
 index 23d8732..470d5dc 100644
 --- a/styles.css
 +++ b/styles.css
@@ -130,10 +143,10 @@ index 23d8732..470d5dc 100644
 +    background-color: aquamarine;
  }
 (1/1) Stage this hunk [y,n,q,a,d,e,?]? y
-</code></pre>
+</code></pre></div>
 <h2 id="3-you-want-to-merge-together-two-commits-you-realized-are-part-of-the-same-atomic-commit">3. You want to merge together two commits you realized are part of the same Atomic commit.</h2>
 <p>Start by doing a <code>git log</code>. In the example below we want to merge <code>f2662c5</code> into <code>5f7037f</code> (the last commit into the first one).</p>
-<pre><code>commit f2662c51cf2f14ccb33907267f1d823ff6b8a678 (HEAD -&gt; master)
+<div class="highlight"><pre><span></span><code>commit f2662c51cf2f14ccb33907267f1d823ff6b8a678 (HEAD -&gt; master)
 Date:   Sat Feb 13 16:36:03 2021 +0000
 
     Frontend: added style link to Index.html
@@ -155,12 +168,12 @@ Date:   Sat Feb 13 14:50:27 2021 +0000
 
     This is a base on which we will develop the homepage and add
     new content.
-</code></pre>
+</code></pre></div>
 <p>To achieve this start start by typing: <code>git rebase -i Head~2</code>.
 What this means is: the last commit we want to retain as-is has an index position of 2 (Git uses zero-based indexing) so we can pass in HEAD~2 to our interactive rebase command.</p>
 <p>This will open an interactive panel where we look for our commit <code>f2662c5</code> and change the word <code>pick</code> to <code>f</code> and move it right under the commit you want to merge into e.g <code>5f7037f</code>.
 Save using <code>:wq</code> command.</p>
-<pre><code>pick f84f936 Frontend: Set up style sheet with default styling
+<div class="highlight"><pre><span></span><code>pick f84f936 Frontend: Set up style sheet with default styling
 f f2662c5 Frontend: added style link to Index.html
 
 # Rebase 5f7037f..f2662c5 onto 5f7037f (2 commands)
@@ -170,14 +183,14 @@ f f2662c5 Frontend: added style link to Index.html
 # r, reword &lt;commit&gt; = use commit, but edit the commit message
 # e, edit &lt;commit&gt; = use commit, but stop for amending
 # s, squash &lt;commit&gt; = use commit, but meld into previous commit
-# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit's log message
+# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit&#39;s log message
 # x, exec &lt;command&gt; = run command (the rest of the line) using shell
-# b, break = stop here (continue rebase later with 'git rebase --continue')
+# b, break = stop here (continue rebase later with &#39;git rebase --continue&#39;)
 # d, drop &lt;commit&gt; = remove commit
 # l, label &lt;label&gt; = label current HEAD with a name
 # t, reset &lt;label&gt; = reset HEAD to a label
 # m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]
-# .       create a merge commit using the original merge commit's
+# .       create a merge commit using the original merge commit&#39;s
 # .       message (or the oneline, if no original merge commit was
 # .       specified). Use -c &lt;commit&gt; to reword the commit message.
 #
@@ -186,12 +199,12 @@ f f2662c5 Frontend: added style link to Index.html
 # If you remove a line here THAT COMMIT WILL BE LOST.
 #
 # However, if you remove everything, the rebase will be aborted.
-</code></pre>
+</code></pre></div>
 <p>If you check your git log now you will see that commit <code>f2662c5</code> is no longer there.</p>
 <h2 id="4-your-code-has-been-reviewed-and-you-need-to-make-some-changes-to-your-commit">4. Your code has been reviewed and you need to make some changes to your commit.</h2>
 <p>To modify a commit that is farther back in your history your best bet is the the rebase again.
 Let's say you need to change something on commit <code>ed57576</code>.</p>
-<pre><code>commit e7433f8b9ff28eb819b8740c6692ffb975b426d4 (HEAD -&gt; feature-button, origin/feature-button)
+<div class="highlight"><pre><span></span><code>commit e7433f8b9ff28eb819b8740c6692ffb975b426d4 (HEAD -&gt; feature-button, origin/feature-button)
 Date:   Sun Feb 14 11:53:53 2021 +0000
 
     Frontend: changed border radius value for the button
@@ -205,9 +218,9 @@ commit a429de8e24c1a5a05c7c4b24c599b637a4fce715 (origin/main)
 Date:   Sat Feb 13 17:15:56 2021 +0000
 
     Frontend: Added button on landing page
-</code></pre>
+</code></pre></div>
 <p>In this case you can do a <code>rebase -i Head~1</code> and in the interactive panel change <code>pick</code> for <code>e</code> to edit your commit.</p>
-<pre><code>e e7433f8 Frontend: changed border radius value for the button
+<div class="highlight"><pre><span></span><code>e e7433f8 Frontend: changed border radius value for the button
 
 # Rebase ed57576..e7433f8 onto ed57576 (1 command)
 #
@@ -216,21 +229,21 @@ Date:   Sat Feb 13 17:15:56 2021 +0000
 # r, reword &lt;commit&gt; = use commit, but edit the commit message
 # e, edit &lt;commit&gt; = use commit, but stop for amending
 # s, squash &lt;commit&gt; = use commit, but meld into previous commit
-# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit's log message
+# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit&#39;s log message
 # x, exec &lt;command&gt; = run command (the rest of the line) using shell
-# b, break = stop here (continue rebase later with 'git rebase --continue')
+# b, break = stop here (continue rebase later with &#39;git rebase --continue&#39;)
 # d, drop &lt;commit&gt; = remove commit
 # l, label &lt;label&gt; = label current HEAD with a name
 # t, reset &lt;label&gt; = reset HEAD to a label
 # m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]
-# .       create a merge commit using the original merge commit's
+# .       create a merge commit using the original merge commit&#39;s
 # .       message (or the oneline, if no original merge commit was
 # .       specified). Use -c &lt;commit&gt; to reword the commit message.
 #
 # These lines can be re-ordered; they are executed from top to bottom.
 #
 # If you remove a line here THAT COMMIT WILL BE LOST.
-</code></pre>
+</code></pre></div>
 <p>After you save with <code>:wq</code> you can go ahead and make your changes followed by:</p>
 <p><code>git add .</code>
 <code>git commit --amend</code>
@@ -245,7 +258,7 @@ Date:   Sat Feb 13 17:15:56 2021 +0000
 <p><code>git checkout &lt;branch name&gt;</code>
 <code>git rebase master</code></p>
 <p>If there are any conflicts you a prompt will ask you to choose what version you would like to keep.</p>
-<pre><code>button {
+<div class="highlight"><pre><span></span><code>button {
 Accept Current Changes | Accept Incoming Change | Accept both Changes
 &lt;&lt;&lt; HEAD (Current Change)
     border-radius: 2%;
@@ -256,90 +269,51 @@ Accept Current Changes | Accept Incoming Change | Accept both Changes
     background-color:green;
 &gt;&gt;&gt; 376b235 (Frontend: changed border radius value for the button)(Incoming Change)
 }
-</code></pre>
+</code></pre></div>
 <p>After solving all the merge conflicts you can add the amended files to the rebase and continue the process:
 <code>git add .</code>
 <code>git rebase --continue</code>
 <code>git commit</code></p>
 <p>Git is powerful! So much so that there are many commands you don't even know they exist. I found that the scenario approach works best for me in learning how to harness the power of Git.
-I recommend <a href="https://gitexercises.fracz.com/exercise/master">these</a> exercises if you want practice and learn more.</p></div>
+I recommend <a href="https://gitexercises.fracz.com/exercise/master">these</a> exercises if you want practice and learn more.</p>
+              
             </div>
-        </div>
+          </div>
+          <footer>
+  
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = "..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
+  <hr/>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
         </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
 </div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
-    </body>
+</body>
 </html>
