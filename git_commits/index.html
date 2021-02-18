@@ -329,30 +329,31 @@ This article is a reflection on my first week as a Junior Software Developer and
 <p>In order to keep a clean working tree and adhere to the Atomic principles here are 5 scenarios that can happen on everyday basis and how you can easily get passed them.</p>
 <h2 id="1-youve-just-committed-your-work-and-realized-you-forgot-to-add-something">1. You've just committed your work and realized you forgot to add something</h2>
 <p>Start with a <code>git log</code> to check it's indeed the last commit you want to change.</p>
-<div class="highlight"><pre><span></span><code>commit 2df06c898ba035a0c0878e4f78032b0bd676f3ad (HEAD -&gt; master)
+<pre><code>commit 2df06c898ba035a0c0878e4f78032b0bd676f3ad (HEAD -&gt; master)
 Date:   Sat Feb 13 14:50:27 2021 +0000
 
     Frontend: Created layout for homepage
 
     This is a base on which we will develop the homepage and add
     new content.
-</code></pre></div>
+
+</code></pre>
 <p>Make your changes, add them to the staging area with <code>git add.</code> and them commit using
 <code>git commit --amend</code>. This will allow you to override your last commit with your new additions.
 If you do a <code>git log</code> now you can see you still have only on commit.</p>
-<div class="highlight"><pre><span></span><code>commit 5f7037f6e7e243e178a58b119e56c0b3337cd408 (HEAD -&gt; master)
+<pre><code>commit 5f7037f6e7e243e178a58b119e56c0b3337cd408 (HEAD -&gt; master)
 Date:   Sat Feb 13 14:50:27 2021 +0000
 
     Frontend: Created layout for homepage
 
     This is a base on which we will develop the homepage and add
     new content.
-</code></pre></div>
+</code></pre>
 <h2 id="2-youve-worked-on-two-things-at-the-same-time-but-you-want-to-commit-them-separately">2. You've worked on two things at the same time but you want to commit them separately.</h2>
 <p>You could use <code>git add &lt;file&gt;</code> but there is a more powerful option.
 Your key here is <code>git add --patch</code> or simply <code>git add -p</code>.
 When you pass this option to add, instead of immediately adding all the changes in the file to the index, it goes through each change and asks you what you want to do, and looks like this:</p>
-<div class="highlight"><pre><span></span><code>diff --git a/styles.css b/styles.css
+<pre><code>diff --git a/styles.css b/styles.css
 index 23d8732..470d5dc 100644
 --- a/styles.css
 +++ b/styles.css
@@ -363,10 +364,10 @@ index 23d8732..470d5dc 100644
 +    background-color: aquamarine;
  }
 (1/1) Stage this hunk [y,n,q,a,d,e,?]? y
-</code></pre></div>
+</code></pre>
 <h2 id="3-you-want-to-merge-together-two-commits-you-realized-are-part-of-the-same-atomic-commit">3. You want to merge together two commits you realized are part of the same Atomic commit.</h2>
 <p>Start by doing a <code>git log</code>. In the example below we want to merge <code>f2662c5</code> into <code>5f7037f</code> (the last commit into the first one).</p>
-<div class="highlight"><pre><span></span><code>commit f2662c51cf2f14ccb33907267f1d823ff6b8a678 (HEAD -&gt; master)
+<pre><code>commit f2662c51cf2f14ccb33907267f1d823ff6b8a678 (HEAD -&gt; master)
 Date:   Sat Feb 13 16:36:03 2021 +0000
 
     Frontend: added style link to Index.html
@@ -388,12 +389,12 @@ Date:   Sat Feb 13 14:50:27 2021 +0000
 
     This is a base on which we will develop the homepage and add
     new content.
-</code></pre></div>
+</code></pre>
 <p>To achieve this start start by typing: <code>git rebase -i Head~2</code>.
 What this means is: the last commit we want to retain as-is has an index position of 2 (Git uses zero-based indexing) so we can pass in HEAD~2 to our interactive rebase command.</p>
 <p>This will open an interactive panel where we look for our commit <code>f2662c5</code> and change the word <code>pick</code> to <code>f</code> and move it right under the commit you want to merge into e.g <code>5f7037f</code>.
 Save using <code>:wq</code> command.</p>
-<div class="highlight"><pre><span></span><code>pick f84f936 Frontend: Set up style sheet with default styling
+<pre><code>pick f84f936 Frontend: Set up style sheet with default styling
 f f2662c5 Frontend: added style link to Index.html
 
 # Rebase 5f7037f..f2662c5 onto 5f7037f (2 commands)
@@ -403,14 +404,14 @@ f f2662c5 Frontend: added style link to Index.html
 # r, reword &lt;commit&gt; = use commit, but edit the commit message
 # e, edit &lt;commit&gt; = use commit, but stop for amending
 # s, squash &lt;commit&gt; = use commit, but meld into previous commit
-# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit&#39;s log message
+# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit's log message
 # x, exec &lt;command&gt; = run command (the rest of the line) using shell
-# b, break = stop here (continue rebase later with &#39;git rebase --continue&#39;)
+# b, break = stop here (continue rebase later with 'git rebase --continue')
 # d, drop &lt;commit&gt; = remove commit
 # l, label &lt;label&gt; = label current HEAD with a name
 # t, reset &lt;label&gt; = reset HEAD to a label
 # m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]
-# .       create a merge commit using the original merge commit&#39;s
+# .       create a merge commit using the original merge commit's
 # .       message (or the oneline, if no original merge commit was
 # .       specified). Use -c &lt;commit&gt; to reword the commit message.
 #
@@ -419,12 +420,12 @@ f f2662c5 Frontend: added style link to Index.html
 # If you remove a line here THAT COMMIT WILL BE LOST.
 #
 # However, if you remove everything, the rebase will be aborted.
-</code></pre></div>
+</code></pre>
 <p>If you check your git log now you will see that commit <code>f2662c5</code> is no longer there.</p>
 <h2 id="4-your-code-has-been-reviewed-and-you-need-to-make-some-changes-to-your-commit">4. Your code has been reviewed and you need to make some changes to your commit.</h2>
 <p>To modify a commit that is farther back in your history your best bet is the the rebase again.
 Let's say you need to change something on commit <code>ed57576</code>.</p>
-<div class="highlight"><pre><span></span><code>commit e7433f8b9ff28eb819b8740c6692ffb975b426d4 (HEAD -&gt; feature-button, origin/feature-button)
+<pre><code>commit e7433f8b9ff28eb819b8740c6692ffb975b426d4 (HEAD -&gt; feature-button, origin/feature-button)
 Date:   Sun Feb 14 11:53:53 2021 +0000
 
     Frontend: changed border radius value for the button
@@ -438,9 +439,9 @@ commit a429de8e24c1a5a05c7c4b24c599b637a4fce715 (origin/main)
 Date:   Sat Feb 13 17:15:56 2021 +0000
 
     Frontend: Added button on landing page
-</code></pre></div>
+</code></pre>
 <p>In this case you can do a <code>rebase -i Head~1</code> and in the interactive panel change <code>pick</code> for <code>e</code> to edit your commit.</p>
-<div class="highlight"><pre><span></span><code>e e7433f8 Frontend: changed border radius value for the button
+<pre><code>e e7433f8 Frontend: changed border radius value for the button
 
 # Rebase ed57576..e7433f8 onto ed57576 (1 command)
 #
@@ -449,21 +450,21 @@ Date:   Sat Feb 13 17:15:56 2021 +0000
 # r, reword &lt;commit&gt; = use commit, but edit the commit message
 # e, edit &lt;commit&gt; = use commit, but stop for amending
 # s, squash &lt;commit&gt; = use commit, but meld into previous commit
-# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit&#39;s log message
+# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit's log message
 # x, exec &lt;command&gt; = run command (the rest of the line) using shell
-# b, break = stop here (continue rebase later with &#39;git rebase --continue&#39;)
+# b, break = stop here (continue rebase later with 'git rebase --continue')
 # d, drop &lt;commit&gt; = remove commit
 # l, label &lt;label&gt; = label current HEAD with a name
 # t, reset &lt;label&gt; = reset HEAD to a label
 # m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]
-# .       create a merge commit using the original merge commit&#39;s
+# .       create a merge commit using the original merge commit's
 # .       message (or the oneline, if no original merge commit was
 # .       specified). Use -c &lt;commit&gt; to reword the commit message.
 #
 # These lines can be re-ordered; they are executed from top to bottom.
 #
 # If you remove a line here THAT COMMIT WILL BE LOST.
-</code></pre></div>
+</code></pre>
 <p>After you save with <code>:wq</code> you can go ahead and make your changes followed by:</p>
 <p><code>git add .</code>
 <code>git commit --amend</code>
@@ -478,7 +479,7 @@ Date:   Sat Feb 13 17:15:56 2021 +0000
 <p><code>git checkout &lt;branch name&gt;</code>
 <code>git rebase master</code></p>
 <p>If there are any conflicts you a prompt will ask you to choose what version you would like to keep.</p>
-<div class="highlight"><pre><span></span><code>button {
+<pre><code>button {
 Accept Current Changes | Accept Incoming Change | Accept both Changes
 &lt;&lt;&lt; HEAD (Current Change)
     border-radius: 2%;
@@ -489,7 +490,7 @@ Accept Current Changes | Accept Incoming Change | Accept both Changes
     background-color:green;
 &gt;&gt;&gt; 376b235 (Frontend: changed border radius value for the button)(Incoming Change)
 }
-</code></pre></div>
+</code></pre>
 <p>After solving all the merge conflicts you can add the amended files to the rebase and continue the process:
 <code>git add .</code>
 <code>git rebase --continue</code>
